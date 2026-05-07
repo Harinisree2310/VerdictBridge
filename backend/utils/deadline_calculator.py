@@ -12,8 +12,8 @@ import re
 from datetime import date, datetime, timedelta
 from typing import Optional
 
-from backend.config import get_settings
-from backend.models import AlertLevel
+from config import get_settings
+from models import AlertLevel
 
 settings = get_settings()
 
