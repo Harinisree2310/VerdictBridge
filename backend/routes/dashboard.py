@@ -15,11 +15,11 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 
-from backend.database import get_db
-from backend.dependencies import get_current_user, require_role
-from backend.models import ActionPlan, AlertLevel, Document, DocumentStatus, User, UserRole
-from backend.schemas import AuditLogRead, DashboardStats, DocumentList, DocumentRead
-from backend.services.audit_service import get_recent_logs, verify_chain
+from database import get_db
+from dependencies import get_current_user, require_role
+from models import ActionPlan, AlertLevel, Document, DocumentStatus, User, UserRole
+from schemas import AuditLogRead, DashboardStats, DocumentList, DocumentRead
+from services.audit_service import get_recent_logs, verify_chain
 
 router = APIRouter(prefix="/dashboard", tags=["dashboard"])
 
