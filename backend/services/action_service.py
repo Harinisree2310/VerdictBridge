@@ -3,9 +3,9 @@ from datetime import datetime
 from uuid import UUID
 from sqlalchemy.orm import Session
 
-from backend.models import Action, ActionStatus
-from backend.schemas import ActionCreate, ActionUpdate
-from backend.services.audit_service import log_event
+from models import Action, ActionStatus
+from schemas import ActionCreate, ActionUpdate
+from services.audit_service import log_event
 
 
 def create_actions_from_suggestions(
