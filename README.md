@@ -1,3 +1,5 @@
+
+
 # ⚖️ VerdictBridge
 
 **AI-Powered Court Judgment Intelligence for Government Action**
@@ -129,53 +131,128 @@ verdictbridge/
 - Tesseract OCR (`apt install tesseract-ocr tesseract-ocr-kan` on Ubuntu)
 
 ### 1. Install dependencies
+## Clone Repository
 
 ```bash
-cd verdictbridge
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+git clone https://github.com/your-username/VerdictBridge.git
+cd VerdictBridge
+```
+
+---
+
+# Backend Setup
+
+## Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+---
+
+## Activate Virtual Environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Mac/Linux
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+## Install Backend Dependencies
+
+```bash
 pip install -r requirements.txt
-python -m spacy download en_core_web_lg   # for Presidio NER
 ```
 
-### 2. Configure environment
+---
+
+## Run Backend Server
 
 ```bash
-cp .env.example .env
-# Edit .env — set DATABASE_URL and at least one LLM API key
-# If no API keys are set, the system uses a mock provider (great for demos)
+uvicorn backend.main:app --reload
 ```
 
-### 3. Run setup
+Backend runs on:
+
+```text
+http://localhost:8000
+```
+
+---
+
+# Frontend Setup
+
+## Move to Frontend Folder
 
 ```bash
-python setup.py
+cd frontend
 ```
 
-### 4. Start services
+---
+
+## Install Frontend Dependencies
 
 ```bash
-# Terminal 1 — API server
-uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
-
-# Terminal 2 — Celery worker
-celery -A backend.worker worker --loglevel=info --concurrency=4
-
-# Terminal 3 (optional) — Celery monitoring
-celery -A backend.worker flower --port=5555
+npm install
 ```
 
-### 5. Run the demo (no server needed)
+---
+
+## Run Frontend
 
 ```bash
-python demo_pipeline.py
+npm run dev
 ```
 
-### 6. Run tests
+Frontend runs on:
 
-```bash
-pytest tests/ -v
+```text
+http://localhost:5173
 ```
+
+---
+
+# Environment Variables
+
+Create a `.env` file in the project root.
+
+Example:
+
+```env
+SECRET_KEY=your_secret_key
+DATABASE_URL=sqlite:///./verdictbridge.db
+
+OPENAI_API_KEY=your_api_key
+GOOGLE_API_KEY=your_api_key
+ANTHROPIC_API_KEY=your_api_key
+```
+
+---
+
+# Optional Features
+
+## OCR Support
+
+Install Tesseract OCR:
+
+### Windows
+Download from:
+https://github.com/tesseract-ocr/tesseract
+
+Then add path:
+
+```env
+TESSERACT_CMD=C:/Program Files/Tesseract-OCR/tesseract.exe
+```
+
 
 ## API Reference
 
