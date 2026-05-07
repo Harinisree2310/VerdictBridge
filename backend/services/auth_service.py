@@ -13,9 +13,9 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
-from backend.config import get_settings
-from backend.models import User, UserRole
-from backend.schemas import TokenData
+from config import get_settings
+from models import User, UserRole
+from schemas import TokenData
 
 settings = get_settings()
 
