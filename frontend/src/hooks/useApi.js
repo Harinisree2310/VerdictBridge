@@ -1,6 +1,6 @@
 import { useAuth } from "./useAuth";
 
-const API = import.meta.env.VITE_API_URL ?? "https://verdictbridge.onrender.com/api/v1";
+const API = import.meta.env.VITE_API_URL ?? "http://localhost:8000/api/v1";
 
 export function useApi() {
   const { token } = useAuth();
