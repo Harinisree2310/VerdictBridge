@@ -3,9 +3,12 @@
 # ⚖️ VerdictBridge
 
 **AI-Powered Court Judgment Intelligence for Government Action**
+## From Court Judgments to Verified Action Plans
 
-Transforms Karnataka High Court judgment PDFs into verified, department-routed
-action plans with full tamper-evident audit trails — in minutes, not days.
+VerdictBridge is an AI-assisted legal workflow intelligence platform designed to help government departments and administrative bodies process court judgments efficiently.
+
+The platform transforms lengthy legal documents into structured legal intelligence, compliance workflows, and actionable administrative tasks.
+
 
 ---
 
