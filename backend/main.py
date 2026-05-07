@@ -16,9 +16,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.config import get_settings
-from backend.database import init_db, SessionLocal
-from backend.routes import auth, upload, extraction, review, dashboard, ai_mode
+from config import get_settings
+from database import init_db, SessionLocal
+from routes import auth, upload, extraction, review, dashboard, ai_mode
 
 logging.basicConfig(
     level=logging.INFO,
